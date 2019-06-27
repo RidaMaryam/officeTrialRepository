@@ -1,0 +1,105 @@
+<!DOCTYPE html> <!--Important for bootstrap to work properly-->
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <h1>{{title}}</h1>
+
+  <nav class="navbar navbar-dark navbar-expand-sm bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+        </a>
+      </div>
+     
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <ul class="navbar-nav nav-fill w-100">  <!--mr = margins-->
+        <li *ngFor="let path1 of env.allPaths" class="nav-item" > 
+          <a routerLink={{path1.path}} class="nav-link" routerLinkActive="active">{{path1.name}}</a>
+      </ul>
+
+      <!--Trying another way of nav bar-->
+      <!-- <div class="collapse navbar-collapse">
+        <div *ngFor="let path1 of env.allPaths" class="navbar-nav">
+          <a class="nav-item nav-link" routerLink={{path1.path}}  routerLinkActive="active">{{path1.name}}</a>
+        </div>
+      </div> -->
+    </div>
+  </nav>
+    
+  <div class="container-fluid w-90" id ="body">
+    <div class="row justify-content-md-center">
+      <div class="row align-items-center">
+        <div class="mt-0">
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <!-- Footer -->
+<footer class="panel-footer panel-custom">
+  <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+      <!-- Grid row -->
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+          <!-- Content -->
+          <h5 class="text-uppercase">Footer Content</h5>
+          <p>First project with header and footer</p>
+          <p>First project with header and footer</p>
+          <p>First project with header and footer</p>
+          <p>First project with header and footer</p>
+        </div>
+
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase">Menu</h5>
+            <ul class="list-unstyled">
+              <li  *ngFor="let path1 of env.allPaths">
+                  <a routerLink={{path1.path}} class="nav-link" routerLinkActive="active">{{path1.name}} </a>
+              </li>
+            </ul>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+
+  </footer>
+  <!-- Footer -->
+
+    
+</html>
+
+<!-- <ul>
+  <li *ngFor="let student of students">{{student}}
+  </li>
+</ul>
+
+<input type="text" [(ngModel)]="inputVar"/> 
+<p>You are entering this = {{inputVar}}</p>
+<button (click)="myFunc()">Click me </button> -->
+
+

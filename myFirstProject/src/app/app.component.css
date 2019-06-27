@@ -1,0 +1,23 @@
+a.active {
+    background-color: var(--yellow);
+    color: white
+}
+h1 {
+    color: var(--yellow)
+}
+h5 {
+    color: var(--yellow)
+}
+.panel-footer.panel-custom {
+    display: block;
+    background:var(--gray-dark);
+    color:white;
+}
+a{
+     color: var(--gray)
+}
+#body {
+background-color: #EFF0F0;
+padding-top: 20px;
+padding-bottom: 20px
+}
